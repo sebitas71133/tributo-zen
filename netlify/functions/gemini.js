@@ -3,8 +3,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
 dotenv.config();
 
-const API_KEY = process.env.VITE_GEMINI_API_KEY;
-
 export async function handler(event) {
   if (event.httpMethod !== "POST") {
     return {
@@ -23,7 +21,7 @@ export async function handler(event) {
     }
     //gemini-1.5-flash
     //gemini-2.5-flash-preview-05-20
-    const genAI = new GoogleGenerativeAI(API_KEY);
+    const genAI = new GoogleGenerativeAI(process.env.VITE_GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({
       model: "gemini-2.0-flash",
     });
