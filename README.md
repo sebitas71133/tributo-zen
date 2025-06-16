@@ -2,7 +2,17 @@
 
 Una aplicación web interactiva donde puedes rendir tributo a personajes famosos (reales o ficticios). Al ingresar un nombre, se consulta la **Gemini API** y la **Openverse API** para generar contenido relevante: biografía, contribuciones, frases icónicas, obras destacadas, imágenes, videos ¡y mucho más!
 
-![Preview del proyecto](./public/preview.png) <!-- Puedes cambiar este link o eliminarlo si no tienes una imagen -->
+## 🖼️ Vista previa del proyecto
+
+| Personaje reconocido |
+|----------------------|
+| ![Reconocido](https://github.com/user-attachments/assets/c0492482-2c3c-4310-ac40-a3d4ecf94095) |
+
+| Detalles generados | Diseño móvil |
+|--------------------|--------------------|
+| ![Detalles](https://github.com/user-attachments/assets/f4cbef3b-2dba-4d07-a91f-3ca732d87cd7) | ![Móvil](https://github.com/user-attachments/assets/d9a177c1-55cc-4e9b-a621-404894333f74) |
+
+---
 
 ## 🚀 Características
 
@@ -81,7 +91,7 @@ Los archivos se generarán en la carpeta `dist`.
 
 ## ✍️ Autor
 
-Desarrollado con 💻 y ☕ por [Tu Nombre o Nickname].
+Desarrollado con 💻 y ☕ por [sebitas71133].
 
 ## 📄 Licencia
 
