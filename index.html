@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tributo a Autores</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-menu">
+          <li>
+            <button id="btnBiografia" data-text="biografia">Biografía</button>
+          </li>
+          <li>
+            <button id="btnContribuciones" data-text="contribuciones">
+              Contribuciones
+            </button>
+          </li>
+          <li>
+            <button id="btnFilantropia" data-text="filantropia">
+              Filantropia
+            </button>
+          </li>
+          <li><button id="btnCitas" data-text="citas">Citas</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1 class="tributo" id="autorNombre">Nombre del Autor</h1>
+
+        <div class="search">
+          <textarea
+            id="searchName"
+            placeholder="Ingrese el nombre del autor"
+          ></textarea>
+          <button id="btnSearch">Buscar</button>
+        </div>
+      </section>
+
+      <section id="biografia" class="info-section">
+        <article>
+          <div class="contenido">
+            <h3>Biografia</h3>
+
+            <p id="bioTexto">Texto de la biografía cargado desde la API.</p>
+          </div>
+          <div class="imagen">
+            <img id="bioImagen" src="" alt="Imagen biografía" />
+          </div>
+        </article>
+      </section>
+
+      <section id="contribuciones" class="info-section">
+        <article>
+          <div class="contenido">
+            <h3>Contribuciones</h3>
+            <ul id="contribucionesLista"></ul>
+          </div>
+          <div class="imagen">
+            <img id="contriImagen" src="" alt="Imagen contribuciones" />
+          </div>
+        </article>
+      </section>
+
+      <section id="filantropia" class="info-section">
+        <article>
+          <div class="contenido">
+            <h3>Filantropía</h3>
+            <p id="filaTexto">Texto sobre filantropía cargado desde la API.</p>
+          </div>
+          <div class="imagen">
+            <img id="filaImagen" src="" alt="Imagen filantropía" />
+          </div>
+        </article>
+      </section>
+
+      <section id="citas" class="info-section">
+        <article>
+          <div class="contenido">
+            <h3>Citas</h3>
+            <ul id="citasLista"></ul>
+          </div>
+          <div class="imagen">
+            <img id="citasImagen" src="" alt="Imagen citas" />
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="linksSection">
+        <h3>Información</h3>
+        <ul>
+          <li>
+            <a href="tributo_beta.html" target="_blank">Más sobre el autor</a>
+          </li>
+        </ul>
+      </div>
+      <div class="linksSection">
+        <h3>Altruismo</h3>
+        <ul>
+          <li>
+            <a href="https://www.wikiwand.com/" target="_blank"
+              >Ver en Wikiwand</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="linksSection">
+        <h3>LinkedIn</h3>
+        <ul>
+          <li><a href="#" target="_blank">Perfil en LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="linksSection">
+        <h3>Videojuegos</h3>
+        <ul>
+          <li><a href="#" target="_blank">Ver en Steam</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
