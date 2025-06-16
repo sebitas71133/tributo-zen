@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tributo a Autores</title>
+    <title>Tributo a Personajes</title>
+    <link rel="icon" href="public/author.png" />
     <link rel="stylesheet" href="src/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
@@ -15,42 +20,63 @@
       <nav>
         <ul class="nav-menu">
           <li>
-            <button id="btnBiografia" data-text="biografia">Biografía</button>
+            <button id="btnBiografia" data-text="biografia">
+              <i class="fas fa-book"></i> Biografía
+            </button>
           </li>
           <li>
             <button id="btnContribuciones" data-text="contribuciones">
-              Contribuciones
+              <i class="fas fa-star"></i> Contribuciones
             </button>
           </li>
           <li>
-            <button id="btnFilantropia" data-text="filantropia">
-              Filantropia
+            <button id="btnCuriosidades" data-text="curiosidades">
+              <i class="fas fa-lightbulb"></i> Curiosidades
             </button>
           </li>
-          <li><button id="btnCitas" data-text="citas">Citas</button></li>
+          <li>
+            <button id="btnFrases" data-text="frases">
+              <i class="fas fa-quote-right"></i> Frases
+            </button>
+          </li>
+          <li>
+            <button id="btnObras" data-text="obras">
+              <i class="fas fa-film"></i> Obras
+            </button>
+          </li>
+          <li>
+            <button id="btnVideo" data-text="videos">
+              <i class="fas fa-film"></i> videos
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section class="intro">
-        <h1 class="tributo" id="autorNombre">Nombre del Autor</h1>
+        <div class="hero">
+          <h1 class="tributo" id="autorNombre">Nombre del Personaje</h1>
+          <p id="primerAparicion"></p>
+        </div>
 
-        <div class="search">
-          <textarea
+        <div class="search-container">
+          <input
+            type="text"
             id="searchName"
-            placeholder="Ingrese el nombre del autor"
-          ></textarea>
-          <button id="btnSearch">Buscar</button>
+            placeholder="Buscar personaje..."
+          />
+          <button id="btnSearch"><i class="fas fa-search"></i> Buscar</button>
         </div>
       </section>
 
       <section id="biografia" class="info-section">
-        <article>
+        <div class="section-header">
+          <h2><i class="fas fa-book"></i> Biografía</h2>
+        </div>
+        <article class="card">
           <div class="contenido">
-            <h3>Biografia</h3>
-
-            <p id="bioTexto">Texto de la biografía cargado desde la API.</p>
+            <p id="bioTexto">Cargando biografía...</p>
           </div>
           <div class="imagen">
             <img id="bioImagen" src="" alt="Imagen biografía" />
@@ -59,9 +85,11 @@
       </section>
 
       <section id="contribuciones" class="info-section">
-        <article>
+        <div class="section-header">
+          <h2><i class="fas fa-star"></i> Contribuciones</h2>
+        </div>
+        <article class="card">
           <div class="contenido">
-            <h3>Contribuciones</h3>
             <ul id="contribucionesLista"></ul>
           </div>
           <div class="imagen">
@@ -70,61 +98,105 @@
         </article>
       </section>
 
-      <section id="filantropia" class="info-section">
-        <article>
+      <section id="curiosidades" class="info-section">
+        <div class="section-header">
+          <h2><i class="fas fa-lightbulb"></i> Curiosidades</h2>
+        </div>
+        <article class="card">
           <div class="contenido">
-            <h3>Filantropía</h3>
-            <p id="filaTexto">Texto sobre filantropía cargado desde la API.</p>
+            <ul id="curiosidadesLista"></ul>
           </div>
           <div class="imagen">
-            <img id="filaImagen" src="" alt="Imagen filantropía" />
+            <img id="curioImagen" src="" alt="Imagen curiosidades" />
           </div>
         </article>
       </section>
 
-      <section id="citas" class="info-section">
-        <article>
+      <section id="frases" class="info-section">
+        <div class="section-header">
+          <h2><i class="fas fa-quote-right"></i> Frases Icónicas</h2>
+        </div>
+        <article class="card">
           <div class="contenido">
-            <h3>Citas</h3>
-            <ul id="citasLista"></ul>
+            <div id="frasesContainer" class="frases-grid"></div>
           </div>
           <div class="imagen">
-            <img id="citasImagen" src="" alt="Imagen citas" />
+            <img id="frasesImagen" src="" alt="Imagen frases" />
+          </div>
+        </article>
+      </section>
+
+      <section id="obras" class="info-section">
+        <div class="section-header">
+          <h2><i class="fas fa-film"></i> Obras Destacadas</h2>
+        </div>
+        <article class="card">
+          <div class="contenido">
+            <div id="obrasContainer" class="obras-grid"></div>
+          </div>
+          <div class="imagen">
+            <img id="obrasImagen" src="" alt="Imagen obras" />
+          </div>
+        </article>
+      </section>
+
+      <section id="multimedia" class="info-section">
+        <div class="section-header">
+          <h2><i class="fas fa-video"></i> Multimedia</h2>
+        </div>
+        <article class="card">
+          <div class="contenido">
+            <div id="videosContainer" class="videos-grid"></div>
           </div>
         </article>
       </section>
     </main>
 
     <footer>
-      <div class="linksSection">
-        <h3>Información</h3>
-        <ul>
-          <li>
-            <a href="tributo_beta.html" target="_blank">Más sobre el autor</a>
-          </li>
-        </ul>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3><i class="fas fa-info-circle"></i> Información</h3>
+          <ul>
+            <li>
+              <a href="#" target="_blank">Acerca de este proyecto</a>
+            </li>
+            <li>
+              <a href="#" target="_blank">Cómo se hizo</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3><i class="fas fa-external-link-alt"></i> Enlaces</h3>
+          <ul>
+            <li>
+              <a id="enlaceWiki" href="#" target="_blank">Ver en Wikipedia</a>
+            </li>
+            <li>
+              <a id="enlaceFandom" href="#" target="_blank">Fandom</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3><i class="fas fa-user"></i> Creador</h3>
+          <ul>
+            <li id="creadoresLista"></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3><i class="fas fa-share-alt"></i> Compartir</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="linksSection">
-        <h3>Altruismo</h3>
-        <ul>
-          <li>
-            <a href="https://www.wikiwand.com/" target="_blank"
-              >Ver en Wikiwand</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="linksSection">
-        <h3>LinkedIn</h3>
-        <ul>
-          <li><a href="#" target="_blank">Perfil en LinkedIn</a></li>
-        </ul>
-      </div>
-      <div class="linksSection">
-        <h3>Videojuegos</h3>
-        <ul>
-          <li><a href="#" target="_blank">Ver en Steam</a></li>
-        </ul>
+
+      <div class="copyright">
+        <p>&copy; 2023 Tributo a Personajes. Todos los derechos reservados.</p>
       </div>
     </footer>
 
